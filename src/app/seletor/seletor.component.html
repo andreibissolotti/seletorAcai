@@ -1,0 +1,27 @@
+
+<div class="secao">
+    <h2>{{titulo}}</h2>
+    <h3 *ngIf="escolhaAte > 1">Escolha até {{escolhaAte}}</h3>
+</div>
+<div *ngFor="let opcao of opcoes, let i=index">
+        <div *ngIf="escolhaAte == 1">
+            <input 
+            id="{{opcao}}" 
+            [name]="titulo" 
+            value="{{opcao}}" 
+            type="radio"
+            >
+            <label for="{{opcao}}">{{opcao}}</label>
+        </div>
+        <div *ngIf="escolhaAte > 1">
+            <input 
+            id="{{opcao}}" 
+            [name]="titulo" 
+            value="{{opcao}}" 
+            type="checkbox"
+            (change)="select(i)"
+            [disabled]="escolhidos.length >= escolhaAte && !escolhidos.includes(opcao)"
+            >
+            <label for="{{opcao}}">{{opcao}}</label>
+        </div>
+</div>
