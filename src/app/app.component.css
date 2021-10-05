@@ -1,0 +1,10 @@
+:host{
+    display: block;
+    border: 2px solid rgb(48, 48, 48);
+    width: 25%;
+    padding-bottom: 1rem;
+}
+
+h1{
+    text-align: center;
+}
